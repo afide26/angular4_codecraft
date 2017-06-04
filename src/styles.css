@@ -2,3 +2,11 @@
 body{
     padding-top: 50px;
 }
+
+a.btn, button.btn{
+    border-radius: 35px;
+}
+
+i.fa{
+    color: #fff;
+}
