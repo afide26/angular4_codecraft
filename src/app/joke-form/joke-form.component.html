@@ -1,0 +1,23 @@
+<form (keydown.enter)="createJoke(setup.value, punchline.value)">
+  <div class="card card-block">
+    <h4 class="card-title">Create Joke</h4>
+    <div class="form-group">
+      <input type="text"
+            class="form-control"
+            placeholder="Enter the setup"
+            #setup>
+    </div>
+    <div class="form-group">
+      <input type="text"
+            class="form-control"
+            placeholder="Enter the punchline"
+            #punchline>
+    </div>
+    <div class="actions">
+    <button type="button"
+            class="btn btn-primary btn-sm" (click)="createJoke(setup.value, punchline.value)"
+            >Create
+    </button>
+    </div>
+  </div>
+</form>
