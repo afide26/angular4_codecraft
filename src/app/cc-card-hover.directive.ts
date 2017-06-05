@@ -2,18 +2,22 @@ import { Directive,
          ElementRef, 
          Renderer2, 
          HostListener,
-         HostBinding } from '@angular/core';
+         HostBinding,
+         Input } from '@angular/core';
 
 @Directive({
   selector: '[appCcCardHover]'
 })
 export class CcCardHoverDirective {
+  @Input('appCcCardHover') config:any = {
+    querySelector: '.card-text'
+  }
   @HostBinding('class.card-outline-success') private isHovering:boolean = false;
   constructor(private el:ElementRef, 
               private renderer: Renderer2) {
    }
   @HostListener('mouseover') onMouseOver(){
-    let punchline = this.el.nativeElement.querySelector('.card-text');
+    let punchline = this.el.nativeElement.querySelector(this.config.querySelector);
     let punchlineBlock = this.el.nativeElement;
     let deletePunchLine = this.el.nativeElement.querySelector('.actions');
     this.renderer.setStyle(punchline,'display','block');
@@ -23,7 +27,7 @@ export class CcCardHoverDirective {
   }
 
   @HostListener('mouseout') onMouseOut(){
-    let punchline = this.el.nativeElement.querySelector('.card-text');
+    let punchline = this.el.nativeElement.querySelector(this.config.querySelector);
     let punchlineBlock = this.el.nativeElement;
     let deletePunchLine = this.el.nativeElement.querySelector('.actions');
     this.renderer.setStyle(punchline,'display','none');
