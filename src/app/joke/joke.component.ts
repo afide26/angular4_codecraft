@@ -1,7 +1,7 @@
-import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter,OnDestroy } from '@angular/core';
 
 import { Joke } from '../models/joke.model'
-
+import { CcCardHoverDirective } from '../cc-card-hover.directive'
 @Component({
   selector: 'app-joke',
   templateUrl: './joke.component.html',
@@ -18,5 +18,9 @@ export class JokeComponent implements OnInit {
   
   ngOnInit() {
   }
-
+  
+  ngOnDestroy(){
+    alert("Are you sure you want to delete this joke!");
+    console.log("You removed:", this.data.setup);
+  }
 }

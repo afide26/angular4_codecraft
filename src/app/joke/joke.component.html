@@ -1,14 +1,14 @@
-<div class="card card-block">
+<div class="card card-block" appCcCardHover>
   <h4 class="card-title">
-  	{{data.setup}}
+    <ng-content select=".setup"></ng-content>
   </h4>
   <p class="card-text"
-     [hidden]="data.hide">{{ data.punchline }}
+     [ngStyle]="{'display':'none'}">{{ data.punchline }}
   </p>
-  <div class="actions">
-    <a
+  <div class="actions" [ngStyle]="{'display':'block'}">
+    <!--<a
       class="btn btn-success btn-sm" (click)="data.toggle()"><i class="fa fa-eye"></i> Show Me
-    </a>
+    </a>-->
     <a class="btn btn-danger btn-sm" (click)="deleteJoke()"><i class="fa fa-trash"></i> Delete
     </a>  
   </div>

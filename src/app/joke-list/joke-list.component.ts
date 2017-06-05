@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Joke } from '../models/joke.model'
 @Component({
   selector: 'app-joke-list',
   template: `
     <app-joke-form (jokeCreated)="addJoke($event)"></app-joke-form>
-    <app-joke *ngFor="let j of jokes;" [joke]="j" (onDeleteJoke)="deleteJoke($event)"></app-joke>
+    <app-joke *ngFor="let j of jokes; let i = index" [joke]="j" (onDeleteJoke)="deleteJoke($event)">
+    <span class="setup">{{i + 1}}. {{ j.setup }}</span>
+    </app-joke>
   `,
   styleUrls: ['./joke-list.component.css']
 })
