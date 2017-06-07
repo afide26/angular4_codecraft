@@ -1,0 +1,10 @@
+
+.fa-heart{
+    color:#ccc;
+    cursor:pointer;
+    text-align:right;
+}
+
+.highlighted{
+    color:deeppink;
+}

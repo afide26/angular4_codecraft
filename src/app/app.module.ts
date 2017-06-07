@@ -8,6 +8,7 @@ import { JokeListComponent } from './joke-list/joke-list.component';
 import { JokeFormComponent } from './joke-form/joke-form.component';
 import { JokeComponent } from './joke/joke.component';
 import { CcCardHoverDirective } from './cc-card-hover.directive';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CcCardHoverDirective } from './cc-card-hover.directive';
     JokeListComponent,
     JokeFormComponent,
     JokeComponent,
-    CcCardHoverDirective
+    CcCardHoverDirective,
+    LikeComponent
   ],
   imports: [
     BrowserModule,

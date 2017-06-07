@@ -21,7 +21,7 @@ export class CcCardHoverDirective {
     let punchlineBlock = this.el.nativeElement;
     let deletePunchLine = this.el.nativeElement.querySelector('.actions');
     this.renderer.setStyle(punchline,'display','block');
-    this.renderer.setStyle(punchlineBlock,'backgroundColor','#cecece');
+    this.renderer.setStyle(punchlineBlock,'backgroundColor','rgba(255, 235, 209,0.25)');
     this.renderer.setStyle(deletePunchLine,'display','none');
     this.isHovering = true;
   }

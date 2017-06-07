@@ -1,4 +1,7 @@
 <div class="card card-block" [appCcCardHover]="{querySelector:'p'}">
+  <app-like [iLike]="data.iLike"
+            [totalLikes]="data.totalLikes"
+            ></app-like>
   <h4 class="card-title">
     <ng-content select=".setup"></ng-content>
   </h4>
